@@ -1,0 +1,32 @@
+{
+  "name": "linkorb/doxy",
+  "description": "Doxy: Docker management tools",
+  "homepage": "https://github.com/linkorb/doxy",
+  "keywords": ["docker", "linkorb"],
+  "type": "library",
+  "authors": [
+    {
+      "name": "LinkORB Engineering",
+      "email": "engineering@linkorb.com",
+      "role": "Development"
+    }
+  ],
+  "require": {
+    "symfony/yaml": "~3.0",
+    "symfony/console": "~3.0",
+    "symfony/dotenv": "v3.3.0",
+    "symfony/process": "~3.0",
+    "twig/twig": "~1.0",
+    "linkorb/boost": "~1.0",
+    "linkorb/collection": "~1.0",
+    "docker-php/docker-php": "~1.0",
+    "ssh-client/ssh-client": "~0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Doxy\\": "src/"
+    }
+  },
+  "bin": ["bin/doxy"],
+  "license": "MIT"
+}
