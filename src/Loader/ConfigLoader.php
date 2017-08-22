@@ -32,7 +32,7 @@ class ConfigLoader
                 }
                 foreach ($container->getNetworkSettings()->getPorts() as $key => $value) {
                     if (!$port) {
-                        $port = $key;
+                        $port = explode('/', $key)[0];
                     }
                 }
                 $server->setContainerPort($port);
