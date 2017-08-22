@@ -3,6 +3,19 @@ Doxy
 
 Dynamic proxy configuration for docker containers
 
+## Installation
+
+Dowload `doxy.phar` from the [latest release](github.com/linkorb/doxy/releases/latest). For example:
+
+    curl -L -o /usr/local/bin/doxy https://github.com/linkorb/doxy/releases/download/v1.0.0/doxy.phar
+    chmod 755 /usr/local/bin/doxy
+    
+## Configuration
+
+Doxy will load it's environment variable configuration from `~/.doxy` or `/etc/doxy.conf`.
+
+You can use the included `doxy.conf.dist` as an example.
+
 ## Commands
 
 ### doxy run
@@ -19,7 +32,7 @@ the container port using the `VIRTUAL_PORT` environment variable.
 
 If an environment variable `LETSENCRYPT_EMAIL` is defined, the appropriate let's encrypt configuration is added to the configuration.
 
-## doxy watch
+### doxy watch
 
 This command will watch the docker daemon for changes in running containers.
 Each time a container is started or stopped, the watch command will trigger a `doxy run` to update the configuration immediately.
@@ -31,12 +44,6 @@ The recommended way of running it is by adding a file called `/etc/cron.d/doxy` 
     # ensure `doxy watch` is running
     MAILTO="admin@example.com"
     */1 * * * * root  php /usr/local/bin/doxy.phar watch >> /var/log/doxy.log 2>> /var/log/doxy.err
-
-## Configuration
-
-Doxy will load it's environment variable configuration from `~/.doxy` or `/etc/doxy.conf`.
-
-You can use the included `doxy.conf.dist` as an example.
 
 ## Let's encrypt: Retrieve the initial certificate
 
