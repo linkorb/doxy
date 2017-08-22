@@ -21,6 +21,16 @@ If an environment variable `LETSENCRYPT_EMAIL` is defined, the appropriate let's
 
     certbot certonly --standalone -d my.example.com
 
+
+## Building doxy.phar
+
+This project uses [box2](https://box-project.github.io/box2/s) to generate the .phar file.
+
+Simply install the latest box.phar in your local directory and run it's `build` command:
+
+    curl -LSs https://box-project.github.io/box2/installer.php | php
+    php box.phar build
+
 ## License
 
 MIT. Please refer to the [license file](LICENSE) for details.
