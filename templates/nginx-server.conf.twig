@@ -8,6 +8,8 @@ server {
     access_log /var/log/nginx/{{ server.getName() }}.access;
     error_log /var/log/nginx/{{ server.getName() }}.error;
 
+    client_max_body_size 0;
+
     location / {
         proxy_set_header Host {{ server.getName() }};
         proxy_set_header X-Real-IP $remote_addr;
