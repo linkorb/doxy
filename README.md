@@ -19,6 +19,19 @@ the container port using the `VIRTUAL_PORT` environment variable.
 
 If an environment variable `LETSENCRYPT_EMAIL` is defined, the appropriate let's encrypt configuration is added to the configuration.
 
+## doxy watch
+
+This command will watch the docker daemon for changes in running containers.
+Each time a container is started or stopped, the watch command will trigger a `doxy run` to update the configuration immediately.
+
+The command will wait 5 seconds between each check and runs a maximum of 10.000 cycles.
+
+The recommended way of running it is by adding a file called `/etc/cron.d/doxy` with the following contents:
+
+    # ensure `doxy watch` is running
+    MAILTO="admin@example.com"
+    */1 * * * * root  php /usr/local/bin/doxy.phar watch >> /var/log/doxy.log 2>> /var/log/doxy.err
+
 ## Configuration
 
 Doxy will load it's environment variable configuration from `~/.doxy` or `/etc/doxy.conf`.
