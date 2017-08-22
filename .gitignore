@@ -1,3 +1,5 @@
 .DS_Store
 .env
 vendor/
+box.phar
+doxy.phar
