@@ -28,13 +28,19 @@ $filename = __DIR__.'/../.env';
 if (!file_exists($filename)) {
     $filename = '~/.doxy';
 }
-if (file_exists($filename)) {
-    $dotenv = new Dotenv();
-    $dotenv->load($filename);
+if (!file_exists($filename)) {
+    $filename = '/etc/doxy.conf';
 }
+if (!file_exists($filename)) {
+    throw new RuntimeException("Missing doxy configuration (please refer to README.md)");
+}
+
+$dotenv = new Dotenv();
+$dotenv->load($filename);
 
 
 $application = new Application('Doxy', '1.0.0');
 $application->setCatchExceptions(true);
-$application->add(new \Doxy\Command\NginxConfigureCommand());
+$application->add(new \Doxy\Command\RunCommand());
+$application->add(new \Doxy\Command\WatchCommand());
 $application->run();

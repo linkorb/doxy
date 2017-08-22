@@ -4,24 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "755acc945e5af77b7ebb710db6000a21",
+    "content-hash": "1c9183a63f162780e35849e2223ee936",
     "packages": [
         {
-            "name": "clue/stream-filter",
-            "version": "v1.3.0",
+            "name": "andrewfenn/pid-helper",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/clue/php-stream-filter.git",
-                "reference": "e3bf9415da163d9ad6701dccb407ed501ae69785"
+                "url": "https://github.com/andrewfenn/pidhelper.git",
+                "reference": "407e3b4e0210929a95adf2262c6c3cd38c2dd5e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clue/php-stream-filter/zipball/e3bf9415da163d9ad6701dccb407ed501ae69785",
-                "reference": "e3bf9415da163d9ad6701dccb407ed501ae69785",
+                "url": "https://api.github.com/repos/andrewfenn/pidhelper/zipball/407e3b4e0210929a95adf2262c6c3cd38c2dd5e4",
+                "reference": "407e3b4e0210929a95adf2262c6c3cd38c2dd5e4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PidHelper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Fenn",
+                    "homepage": "https://github.com/andrewfenn"
+                }
+            ],
+            "description": "A small helper class used to help you check if code is still running",
+            "keywords": [
+                "pid",
+                "process"
+            ],
+            "time": "2015-09-01T07:42:02+00:00"
+        },
+        {
+            "name": "clue/stream-filter",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/php-stream-filter.git",
+                "reference": "d80fdee9b3a7e0d16fc330a22f41f3ad0eeb09d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/php-stream-filter/zipball/d80fdee9b3a7e0d16fc330a22f41f3ad0eeb09d0",
+                "reference": "d80fdee9b3a7e0d16fc330a22f41f3ad0eeb09d0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0 || ^4.8"
             },
             "type": "library",
             "autoload": {
@@ -53,7 +96,7 @@
                 "stream_filter_append",
                 "stream_filter_register"
             ],
-            "time": "2015-11-08T23:41:30+00:00"
+            "time": "2017-08-18T09:54:01+00:00"
         },
         {
             "name": "docker-php/docker-php",
