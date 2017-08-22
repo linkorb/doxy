@@ -1,0 +1,6 @@
+{
+    "directories": ["src", "vendor", "templates"],
+    "main": "bin/doxy",
+    "output": "doxy.phar",
+    "stub": true
+}
