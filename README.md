@@ -5,7 +5,7 @@ Dynamic proxy configuration for docker containers
 
 ## Installation
 
-Dowload `doxy.phar` from the [latest release](github.com/linkorb/doxy/releases/latest). For example:
+Dowload `doxy.phar` from the [latest release](https://github.com/linkorb/doxy/releases/latest). For example:
 
     curl -L -o /usr/local/bin/doxy https://github.com/linkorb/doxy/releases/download/v1.0.0/doxy.phar
     chmod 755 /usr/local/bin/doxy
