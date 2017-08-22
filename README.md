@@ -44,6 +44,16 @@ The recommended way of running it is by adding a file called `/etc/cron.d/doxy` 
     # ensure `doxy watch` is running
     MAILTO="admin@example.com"
     */1 * * * * root  php /usr/local/bin/doxy.phar watch >> /var/log/doxy.log 2>> /var/log/doxy.err
+    
+## Example usage
+
+Any container that gets started with a VIRTUAL_HOST environment defined will be configured as a server + upstream in nginx.
+You can pass these environment through a docker-compose.yml file, or manually when spawing a container like this:
+
+    docker run -d -e VIRTUAL_HOST=my.public.host.name -p 8000:8000 --name whoami -t jwilder/whoami
+
+You should notice (through the logfiles) that doxy detects the change and regenerates the configuration and reloads nginx. 
+When the specified hostname is pointing to this vm you should now see a working page forwarded through nginx.
 
 ## Let's encrypt: Retrieve the initial certificate
 
