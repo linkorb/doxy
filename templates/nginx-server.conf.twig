@@ -11,6 +11,7 @@ server {
     error_log /var/log/nginx/{{ server.getName() }}.error;
 
     location / {
+        proxy_set_header Host {{ server.getName() }};
         proxy_pass http://upstream_{{ server.getName() }};
     }
 
